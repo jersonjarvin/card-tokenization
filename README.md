@@ -7,7 +7,7 @@ Proyecto de tokenización de tarjetas, desarrollado con NodeJs, KoaJs, Inverisy 
 Para clonar este repositorio en su dispositivo:
 
 ```bash
-git clone https://github.com/hagopj13/node-express-boilerplate.git
+git clone https://github.com/jersonjarvin/card-tokenization.git
 ```
 Una vez que lo haya clonado con éxito, vaya directamente a la carpeta del directorio e instale las dependencias:
 
