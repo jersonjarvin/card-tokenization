@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  redis-db:
+    container_name: redis-db
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+  app:
+    container_name: app
+    restart: always
+    build:
+      context: .
+    ports: 
+      - "4700:4700" 
+    links: 
+        - redis-db

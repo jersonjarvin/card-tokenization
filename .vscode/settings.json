@@ -1,0 +1,22 @@
+{
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "cSpell.words": ["inversify", "middlewares"],
+  "sqltools.connections": [
+    {
+      "mssqlOptions": {
+        "appName": "SQLTools",
+        "useUTC": true,
+        "encrypt": true
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 1433,
+      "askForPassword": true,
+      "driver": "MSSQL",
+      "name": "SQLSERVER",
+      "database": "DB_TOTTUS_PERU_DEV",
+      "username": "sa"
+    }
+  ]
+}

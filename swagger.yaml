@@ -1,0 +1,102 @@
+swagger: "2.0"
+info:
+  description: "Microservicio de tokenización de tarjetas"
+  version: "1.0.0"
+  title: "Tokenización de tarjetas"
+host: ""
+basePath: "/v1"
+tags:
+  - name: "card"
+    description: "tokenización"
+schemes:
+  - "http"
+paths:
+  /tokens:
+    post:
+      tags:
+        - "card"
+      summary: "Registrar una tokenización de tarjeta"
+      description: ""
+      operationId: "addCard"
+      consumes:
+        - "application/json"
+        - "application/xml"
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters:
+        - in: "header"
+          name: "x-commerce-key"
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/CardReqDto"
+      responses:
+        "405":
+          description: "Invalid input"
+  /tokens/card-info:
+    get:
+      tags:
+        - "card"
+      summary: "Obtener datos de la tarjeta"
+      operationId: "getCardInfo"
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters:
+        - in: "header"
+          name: "x-commerce-key"
+        - name: "token"
+          in: "header"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "object"
+            items:
+              $ref: "#/definitions/CardResDto"
+        "400":
+          description: "Invalid status value"
+        "401":
+          description: "Unauthorized"    
+
+definitions:
+  CardReqDto:
+    type: "object"
+    properties:
+      email:
+        type: "string"
+      card_number:
+        type: "string"
+      cvv:
+        type: "string"
+      expiration_year:
+        type: "string"
+      expiration_month:
+        type: "string"
+    xml:
+      name: "CardReqDto"
+  CardResDto:
+    type: "object"
+    properties:
+      email:
+        type: "string"
+      card_number:
+        type: "string"
+      expiration_year:
+        type: "string"
+      expiration_month:
+        type: "string"
+    xml:
+      name: "CardResDto"
+  ApiResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      type:
+        type: "string"
+      message:
+        type: "string"
