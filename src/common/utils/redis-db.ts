@@ -1,24 +1,21 @@
-import {DatabaseConfig} from '@common/config/environment'
+import { DatabaseConfig } from '@common/config/environment';
 import { injectable } from 'inversify';
-import { Client } from 'redis-om'
+import { Client } from 'redis-om';
 @injectable()
 export class RedisDB {
-    private client!:Client;
-    constructor(){
+  private client!: Client;
+  async getClient() {
+    if (this.client == null) {
+      this.client = await this.connect();
+    } else {
+      if (!this.client.isOpen()) {
+        this.client = await this.connect();
+      }
     }
-    async getClient(){
-        if(this.client == null){
-            this.client = await this.connect();
-        }else {
-            if(!this.client.isOpen()){
-                this.client = await this.connect();
-            }
-        }
-        return this.client;
-    }
-   
-    private connect():Promise<Client>{
-        return new Client().open(DatabaseConfig.redis_url);
-    }
-}
+    return this.client;
+  }
 
+  private connect(): Promise<Client> {
+    return new Client().open(DatabaseConfig.redis_url);
+  }
+}

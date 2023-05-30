@@ -166,7 +166,7 @@ Lista de rutas disponibles:
     
 `GET /v1/tokens/card-info` - información de tarjetas
  - Header \
-    `POST x-commerce-key -> Indentificador del comercio.`\
+    `POST x-commerce-key -> Indentificador del comercio. (cc7b5eed-e9ea-4288-908a-ec1a18ba17d5)`\
     `POST token -> token.`
 
 

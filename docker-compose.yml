@@ -11,7 +11,7 @@ services:
     restart: always
     build:
       context: .
-    ports: 
-      - "4700:4700" 
-    links: 
-        - redis-db
+    ports:
+      - '4700:4700'
+    links:
+      - redis-db

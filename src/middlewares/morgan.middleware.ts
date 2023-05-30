@@ -4,10 +4,10 @@ import Koa from 'koa';
 import morgan, { StreamOptions } from 'morgan';
 
 const stream: StreamOptions = {
-    write: (message: string | string[]) => logger.http(message.slice(0, Math.max(0, message.lastIndexOf('\n'))))
-  };
-  
-  /**
+  write: (message: string | string[]) => logger.http(message.slice(0, Math.max(0, message.lastIndexOf('\n'))))
+};
+
+/**
  * Enable Morgan only in development mode.
  **/
 

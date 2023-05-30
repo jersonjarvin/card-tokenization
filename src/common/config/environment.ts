@@ -29,5 +29,5 @@ const DatabaseConfig = {
 
 const Token = {
   jwt_secret_key: env.TOKEN.JWT_SECRET_KEY
-}
+};
 export { AppInfo, AppConfig, DatabaseConfig, Token };

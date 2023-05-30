@@ -47,9 +47,7 @@ const LEVEL_COLOR = {
 const DEFAULT_FORMAT = format.combine(
   format.errors({ stack: true }),
   format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss.ms' }),
-  format.printf((info) =>
-    `[${info.timestamp}] ${info.level.toLocaleUpperCase()} ${info.message} ${info.stack || ''}`.trim()
-  )
+  format.printf((info) => `[${info.timestamp}] ${info.level.toLocaleUpperCase()} ${info.message} ${info.stack || ''}`.trim())
 );
 
 const CONSOLE_FORMAT = format.combine(

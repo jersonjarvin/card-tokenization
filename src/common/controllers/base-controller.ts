@@ -35,21 +35,21 @@ export abstract class BaseController {
     return this.errorReponse(res, StatusCodes.UNAUTHORIZED, message);
   }
   invalidParamError(res: Koa.Response, errors: IParamError[]) {
-    res.status = (StatusCodes.UNPROCESSABLE_ENTITY)
+    res.status = StatusCodes.UNPROCESSABLE_ENTITY;
     res.body = new ErrorResponse({
-        code: ResponseCodes.MODEL_IS_NOT_VALID,
-        status: StatusCodes.UNPROCESSABLE_ENTITY,
-        message: getReasonPhrase(StatusCodes.UNPROCESSABLE_ENTITY),
-        errors: errors
-      });
-      return res;
+      code: ResponseCodes.MODEL_IS_NOT_VALID,
+      status: StatusCodes.UNPROCESSABLE_ENTITY,
+      message: getReasonPhrase(StatusCodes.UNPROCESSABLE_ENTITY),
+      errors: errors
+    });
+    return res;
   }
   result(res: Koa.Response, status: StatusCodes, data?: string | object | any) {
     res.status = status;
     res.body = data;
     return res;
   }
-  private errorReponse(res:Koa.Response, status: StatusCodes, message?: string) {
+  private errorReponse(res: Koa.Response, status: StatusCodes, message?: string) {
     const req = res.request;
     const fullPath = `${req.method} ${req.protocol}://${req.headers.host}${req.originalUrl}`;
     const errorResponse = new ErrorResponse({

@@ -1,3 +1,3 @@
-export class  TokenDto{
-    token:string;
+export class TokenDto {
+  token: string;
 }
