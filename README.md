@@ -1,4 +1,4 @@
-# Microservicio Tokenización de Tarjetas - Culqui
+# Microservicio Tokenización de Tarjetas
 
 Proyecto de tokenización de tarjetas, desarrollado con NodeJs, KoaJs, Inverisy y Redis.
 
