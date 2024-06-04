@@ -1,6 +1,6 @@
 # Microservicio Tokenización de Tarjetas
 
-Proyecto de tokenización de tarjetas, desarrollado con NodeJs, KoaJs, Inverisy y Redis.
+Proyecto de tokenización de tarjetas, desarrollado con NodeJs, KoaJs, Inversify y Redis.
 
 ## Instalación
 
